@@ -34,7 +34,7 @@ public class BFrame extends JFrame {
 	public static final String[] BAR_NAMES = { "File", "Help" };
 	public static final String[][] MENU_NAMES = { { "Quit" }, { "Rules", "About" } };
 	private static final String TITLE = "Boggle";
-	private static final String RULES = "The rules of this game are simple. \n\nYou have to find words by building off \nadjacent touch cells on the board. \nThis means that the letters can be \ntouching in horizontal, vertical, \nand/or diagonally. \n\nTry to achieve the highest score. \nYou may receive bonus for longer words. Have Fun!î";
+	private static final String RULES = "The rules of this game are simple. \n\nYou have to find words by building off \nadjacent touch cells on the board. \nThis means that the letters can be \ntouching in horizontal, vertical, \nand/or diagonally. \n\nTry to achieve the highest score. \nYou may receive bonus for longer words. Have Fun!‚Äù";
 	private static final String ABOUT = "Boggle is a word game designed by Allan Turoff and trademarked by Parker Brothers, a division of Hasbro. The game is played using a plastic grid of lettered dice, in which players attempt to find words in sequences of adjacent letters.";
 	private static final String MENU_TITLE = "                                                                   Let's Boggle!";
 	private JButton[][] cells;
@@ -246,59 +246,11 @@ public class BFrame extends JFrame {
 	public void setLetter(int r, int c, char l) {
 		// System.out.println("r is " + r + "\tc is " + c + "\tl is " + l);
 		// System.out.println();
-		if (l == 'a') {
-			cells[r][c].setIcon(new ImageIcon("a.gif"));
-		} else if (l == 'b') {
-			cells[r][c].setIcon(new ImageIcon("b.gif"));
-		} else if (l == 'c') {
-			cells[r][c].setIcon(new ImageIcon("c.gif"));
-		} else if (l == 'd') {
-			cells[r][c].setIcon(new ImageIcon("d.gif"));
-		} else if (l == 'e') {
-			cells[r][c].setIcon(new ImageIcon("e.gif"));
-		} else if (l == 'f') {
-			cells[r][c].setIcon(new ImageIcon("f.gif"));
-		} else if (l == 'g') {
-			cells[r][c].setIcon(new ImageIcon("g.gif"));
-		} else if (l == 'h') {
-			cells[r][c].setIcon(new ImageIcon("h.gif"));
-		} else if (l == 'i') {
-			cells[r][c].setIcon(new ImageIcon("i.gif"));
-		} else if (l == 'j') {
-			cells[r][c].setIcon(new ImageIcon("j.gif"));
-		} else if (l == 'k') {
-			cells[r][c].setIcon(new ImageIcon("k.gif"));
-		} else if (l == 'l') {
-			cells[r][c].setIcon(new ImageIcon("l.gif"));
-		} else if (l == 'm') {
-			cells[r][c].setIcon(new ImageIcon("m.gif"));
-		} else if (l == 'n') {
-			cells[r][c].setIcon(new ImageIcon("n.gif"));
-		} else if (l == 'o') {
-			cells[r][c].setIcon(new ImageIcon("o.gif"));
-		} else if (l == 'p') {
-			cells[r][c].setIcon(new ImageIcon("p.gif"));
-		} else if (l == 'q') {
-			cells[r][c].setIcon(new ImageIcon("q.gif"));
-		} else if (l == 'r') {
-			cells[r][c].setIcon(new ImageIcon("r.gif"));
-		} else if (l == 's') {
-			cells[r][c].setIcon(new ImageIcon("s.gif"));
-		} else if (l == 't') {
-			cells[r][c].setIcon(new ImageIcon("t.gif"));
-		} else if (l == 'u') {
-			cells[r][c].setIcon(new ImageIcon("u.gif"));
-		} else if (l == 'v') {
-			cells[r][c].setIcon(new ImageIcon("v.gif"));
-		} else if (l == 'w') {
-			cells[r][c].setIcon(new ImageIcon("w.gif"));
-		} else if (l == 'x') {
-			cells[r][c].setIcon(new ImageIcon("x.gif"));
-		} else if (l == 'y') {
-			cells[r][c].setIcon(new ImageIcon("y.gif"));
-		} else {
-			cells[r][c].setIcon(new ImageIcon("z.gif"));
+		if (l < 'a' || l > 'z') {
+			System.out.println("Invalid character: %c", l);
+			return;
 		}
+		cells[r][c].setIcon(new ImageIcon(l + ".gif"));
 	}
 
 	/**
